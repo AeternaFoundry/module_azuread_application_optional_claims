@@ -19,6 +19,11 @@ Optional:
         - essential (optional)
         - name (required)
         - source (optional)
+    - timeouts (block):
+        - create (optional)
+        - delete (optional)
+        - read (optional)
+        - update (optional)
 EOT
 
   type = map(object({
@@ -41,6 +46,12 @@ EOT
       name                  = string
       source                = optional(string)
     })))
+    timeouts = optional(object({
+      create = optional(string)
+      delete = optional(string)
+      read   = optional(string)
+      update = optional(string)
+    }))
   }))
 }
 
